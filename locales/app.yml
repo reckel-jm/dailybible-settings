@@ -1,0 +1,22 @@
+_version: 2
+settings:
+  en: Settings
+  de: Einstellungen
+settings_description:
+  en: Configure your daily Bible reading as you need.
+  de: Stellen Sie hier Ihre tägliche Bibellese nach Ihren Wünschen ein.
+language:
+  en: Language
+  de: Sprache
+timer: 
+  en: Timer
+  de: Tägliche Erinnerung
+activate_timer:
+  en: Activate the daily reminder
+  de: Tägliche Erinnerung aktivieren
+time: 
+  en: Time
+  de: Zeit
+reminder_notice:
+  en: You will receive a reminder at %{time} every day.
+  de: Sie erhalten jeden Tag um %{time} Uhr eine Erinnerung.
