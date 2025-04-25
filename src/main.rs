@@ -23,6 +23,20 @@ fn main() {
         use dioxus::desktop::tao;
         let window = tao::window::WindowBuilder::new().with_resizable(true);
         dioxus::LaunchBuilder::new().with_cfg(dioxus::desktop::Config::new().with_window(window).with_menu(None)).launch(App);
+
+        // Disable explicit sync for NVIDIA drivers on Linux when using Way
+        #[cfg(target_os = "linux")]
+        {
+            if std::path::Path::new("/dev/dri").exists()
+                && std::env::var("WAYLAND_DISPLAY").is_err()
+                && std::env::var("XDG_SESSION_TYPE").unwrap_or_default() == "x11"
+            {
+                // SAFETY: There's potential for race conditions in a multi-threaded context.
+                unsafe {
+                    std::env::set_var("__NV_DISABLE_EXPLICIT_SYNC=1", "1");
+                }
+            }
+        }
     }
 
     #[cfg(not(feature = "desktop"))]
