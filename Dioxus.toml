@@ -5,6 +5,8 @@
 # HTML title tag content
 title = "dailybible-settings"
 
+base_path = "dailybible-settings"
+
 # include `assets` in web platform
 [web.resource]
 
