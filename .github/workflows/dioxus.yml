@@ -17,7 +17,7 @@ jobs:
       - name: Install cargo bininstall
         uses: cargo-bins/cargo-binstall@main
       - name: Install dioxus-cli
-        run: cargo bininstall dioxus-cli
+        run: cargo binstall dioxus-cli
       - name: Build the project
         run: dx build --release
       - name: Deploy to Github Pages
