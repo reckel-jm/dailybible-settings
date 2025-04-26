@@ -18,6 +18,8 @@ jobs:
         uses: cargo-bins/cargo-binstall@main
       - name: Install dioxus-cli
         run: cargo binstall dioxus-cli
+      - name: Move Dioxus_github.yml to Dioxus.yml
+        run: mv Dioxus_github.yml Dioxus.yml
       - name: Build the project
         run: dx bundle -r --platform web
       - name: Deploy to Github Pages
